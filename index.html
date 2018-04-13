@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <canvas id="mycanvas" width="300" height="300"></canvas>
+  <script>
+    var mycanvas = document.querySelector('#mycanvas'); // gets the canvas HTML element
+
+    var ctx = mycanvas.getContext('2d'); // gets the context of teh canvas 2d or  3d
+
+    // Displaying image on the mycanvas
+    // 1. Create new image object
+    var chessGridImage = new Image();
+
+    // 2. Tell where to place the image on the canvas context
+    chessGridImage.onload = function(){
+
+      console.log('Image Loaded !');
+
+      // Show the image in the canvas context
+      // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage
+      // drawImage - method on canvas context to display an image on the canvas context
+      // @arguments:
+      // chessGridImage - the image object we want to display in the src method below point the image file
+      // 0 -  the x cordinate at which to place the top-left corner of the source image
+      // 0 -  the y cordinate at which to place the top-left corner of the source image
+      // mycanvas.width - the width of the source image. In this case its the same as the canvas
+      // mycanvas.height - the height of the source image. In this case its the same as the canvas
+      ctx.drawImage(chessGridImage, 0, 0 , mycanvas.width, mycanvas.height);
+    };
+
+    // 3. Assign the source image for chessGridImage object
+    chessGridImage.src = 'chessgrid.gif';
+  </script>
+</body>
+</html>
