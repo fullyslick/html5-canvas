@@ -7,24 +7,35 @@
   <title>Document</title>
 </head>
 <body>
-  <canvas id="mycanvas" width="300" height="300"></canvas>
+  <canvas id="mycanvas" width="300" height="300" style ="border: solid 1px;"></canvas>
   <script>
     var mycanvas = document.querySelector('#mycanvas'); // gets the canvas HTML element
 
     var ctx = mycanvas.getContext('2d'); // gets the context of the canvas 2d or  3d
 
-    // Drawing shapes on canvas
+    //************* Moving objects ********************//
+    // FIRST DECALRE THE MOVEMENTS AND THEN THE OBJECTS
+    // SCALE
+    ctx.scale(1, 1.2); // multiplies the x and y values by a given factor
 
-    ctx.beginPath(); // 1. Declare that you want to draw a shape
-    ctx.moveTo(150, 50) // 2. Move to the place where the shape should start x, y cordinates
-    ctx.lineTo(200, 100) // 3. Draw a line vector from the start cordinates above, to the new cordinates (200, 100)
-    ctx.lineTo(100, 100) // 4. Draw a line vector from the cordinates above, to the new cordinates (100, 100)
-    ctx.lineTo(150, 50)  // 5. Draw a line vector from the cordinates above, to the new cordinates (150, 50)
+    // ROTATE
+    // Roatation useses radiants instead of degrees.
+    // To use degrees use the formula below - 6 degress are used here
+    let radians = 6 * (Math.PI/180);
 
-    // Should always have stroke or fill to appear on canvas
-    ctx.stroke(); // 6. Новата форма да има само контура
+    ctx.rotate(radians); // and now rotate all objects
 
-    ctx.fill(); //  7. Новата форма да е запълнена // изтрии този ред за да видиш само контура
+    // MOVE
+    ctx.translate(40, 30); // move all objects x y from the position where they were drawn
+
+    // The objects that will be moved, scaled, rotated
+    // A rectangle not filled
+    ctx.strokeRect(10, 20, 50, 60);
+
+    // Filled red square
+    ctx.fillStyle = 'red';
+    ctx.fillRect(170, 20, 50, 50 );
+
   </script>
 </body>
 </html>
