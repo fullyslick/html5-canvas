@@ -11,40 +11,23 @@
   <script>
     var mycanvas = document.querySelector('#mycanvas'); // gets the canvas HTML element
 
-    var ctx = mycanvas.getContext('2d'); // gets the context of teh canvas 2d or  3d
+    var ctx = mycanvas.getContext('2d'); // gets the context of the canvas 2d or  3d
 
-    // Displaying image on the mycanvas
-    // 1. Create new image object
-    var chessGridImage = new Image();
+    // Createing square or rectangles on canavas
 
-    // 2. Tell where to place the image on the canvas context
-    chessGridImage.onload = function(){
+    // A square without a fill color
+    // On the context of the canvas use strokeRect to create square without a fill color
+    // strokeRect arguments:
+    // 10 - the x cordinate at which to place the top-left corner of the rectangle
+    // 20 - the y cordinate at which to place the top-left corner of the rectangle
+    // 23 - the width of the rectangle
+    // 23 - the height of the rectangle
+    ctx.strokeRect(10, 20, 23, 23);
 
-      console.log('Image Loaded !');
+    // A square with a fill color
+    // arguments same as above
+    ctx.fillRect(40, 20, 23, 23);
 
-      // Show the image in the canvas context
-      // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage
-      // drawImage - method on canvas context to display an image on the canvas context
-      // @arguments:
-      // chessGridImage - the image object we want to display in the src method below point the image file
-      // 0 -  the x cordinate at which to place the top-left corner of the source image
-      // 0 -  the y cordinate at which to place the top-left corner of the source image
-      // mycanvas.width - the width of the source image. In this case its the same as the canvas
-      // mycanvas.height - the height of the source image. In this case its the same as the canvas
-      ctx.drawImage(chessGridImage, 0, 0 , mycanvas.width, mycanvas.height);
-
-      // Export the image on the canvas to new image file
-      // convert the canvas object which is an image of chessgrid and to a text string
-      // assign the result to new variable
-      var savedImage = mycanvas.toDataURL();
-
-      // open in a new window the newly saved image
-      // !! Works only in server environment like xampp
-      window.open(savedImage);
-    };
-
-    // 3. Assign the source image for chessGridImage object
-    chessGridImage.src = 'chessgrid.gif';
   </script>
 </body>
 </html>
