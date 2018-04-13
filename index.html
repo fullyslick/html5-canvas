@@ -6,22 +6,31 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
+
 <body>
-  <canvas id="mycanvas" width="300" height="300" style ="border: solid 1px;"></canvas>
+  <canvas id="mycanvas" width="300" height="300" style="border: solid 1px;"></canvas>
   <script>
     var mycanvas = document.querySelector('#mycanvas'); // gets the canvas HTML element
 
     var ctx = mycanvas.getContext('2d'); // gets the context of the canvas 2d or  3d
 
-    // Colors
-    // !! First declare the color than declare the shape !!
-    ctx.fillStyle = "#9cecc4"; // if it is a shape with fill use fillStyle
-    ctx.fillRect(75,75,150,150);
+    //*********************** Drawing Text ******************************//
+    // If you want to ser properties of text you should decalre them before text
+    ctx.fillStyle = "#9cecc4"; // Fill color of fileld text
+    ctx.font = "bold 24px sans-serif"; // Same as css - font: bold 12px/14px Arial, Verdana, sans-serif;
 
-    // Draw another shape that is only strokes
-    ctx.strokeStyle = "#fb7f71"; // if it is a shape with strokes only use strokeStyle
-    ctx.strokeRect(85, 85, 150, 150);
+    // Display Filled text - string text that will be displayed, x position, y position ( messaured from bottom left corner of text)
+    ctx.fillText('Disco Filled', 10, 85);
 
+   //_________________________________________________________________________//
+   
+    ctx.strokeStyle = "#7f0019"; // define color of stroke
+    ctx.font = "normal 32px serif"; // define font of the text
+
+    // Display Stroke text - string text that will be displayed, x position, y position ( messaured from bottom left corner of text)
+    ctx.strokeText('Mania Stroke', 10, 250);
   </script>
+
 </body>
+
 </html>
