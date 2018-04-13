@@ -13,20 +13,17 @@
 
     var ctx = mycanvas.getContext('2d'); // gets the context of the canvas 2d or  3d
 
-    // Createing square or rectangles on canavas
+    // Erasing part of canvas
 
-    // A square without a fill color
-    // On the context of the canvas use strokeRect to create square without a fill color
-    // strokeRect arguments:
-    // 10 - the x cordinate at which to place the top-left corner of the rectangle
-    // 20 - the y cordinate at which to place the top-left corner of the rectangle
-    // 23 - the width of the rectangle
-    // 23 - the height of the rectangle
-    ctx.strokeRect(10, 20, 23, 23);
+    // Lets create a rectangle that will occupy the whole canvas
+    ctx.fillRect(0, 0, mycanvas.width, mycanvas.height);
 
-    // A square with a fill color
-    // arguments same as above
-    ctx.fillRect(40, 20, 23, 23);
+    // clearRect - erases some part of canvas, the erased part is a rectangle
+    // 5 - the x cordinate at which to place the top-left corner of the erased part
+    // 0 - the y cordinate at which to place the top-left corner of the erased part
+    // 25 - width of the erased part
+    // 130 - height of the erased part
+    ctx.clearRect(5,0,25,130);
 
   </script>
 </body>
