@@ -13,29 +13,39 @@
 
     var ctx = mycanvas.getContext('2d'); // gets the context of the canvas 2d or  3d
 
-    //************* Moving objects ********************//
-    // FIRST DECALRE THE MOVEMENTS AND THEN THE OBJECTS
-    // SCALE
-    ctx.scale(1, 1.2); // multiplies the x and y values by a given factor
+    // Saving - Restoring canvas state
+    ctx.fillStyle = "blue";
+    ctx.fillRect(0,0,50,50);
 
-    // ROTATE
-    // Roatation useses radiants instead of degrees.
-    // To use degrees use the formula below - 6 degress are used here
-    let radians = 6 * (Math.PI/180);
 
-    ctx.rotate(radians); // and now rotate all objects
+    ctx.save();  // Save state with blue fill
 
-    // MOVE
-    ctx.translate(40, 30); // move all objects x y from the position where they were drawn
+    ctx.fillStyle = "green";
+    ctx.fillRect(100,100,10,10);
 
-    // The objects that will be moved, scaled, rotated
-    // A rectangle not filled
-    ctx.strokeRect(10, 20, 50, 60);
 
-    // Filled red square
-    ctx.fillStyle = 'red';
-    ctx.fillRect(170, 20, 50, 50 );
+    ctx.restore(); // Restore to blue fill
 
+    ctx.fillRect(200,10,20,20); // The third rectangle will have blue fill
+
+    // The canvas state can store:
+    // - The current transformation matrix (rotation, scaling, translation)
+    // - strokeStyle
+    // - fillStyle
+    // - font
+    // - globalAlpha
+    // - lineWidth
+    // - lineCap
+    // - lineJoin
+    // - miterLimit
+    // - shadowOffsetX
+    // - shadowOffsetY
+    // - shadowBlur
+    // - shadowColor
+    // - globalCompositeOperation
+    // - textAlign
+    // - textBaseline
+    // - The current clipping region
   </script>
 </body>
 </html>
