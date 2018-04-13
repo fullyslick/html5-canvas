@@ -32,6 +32,15 @@
       // mycanvas.width - the width of the source image. In this case its the same as the canvas
       // mycanvas.height - the height of the source image. In this case its the same as the canvas
       ctx.drawImage(chessGridImage, 0, 0 , mycanvas.width, mycanvas.height);
+
+      // Export the image on the canvas to new image file
+      // convert the canvas object which is an image of chessgrid and to a text string
+      // assign the result to new variable
+      var savedImage = mycanvas.toDataURL();
+
+      // open in a new window the newly saved image
+      // !! Works only in server environment like xampp
+      window.open(savedImage);
     };
 
     // 3. Assign the source image for chessGridImage object
