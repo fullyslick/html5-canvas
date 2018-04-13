@@ -13,18 +13,18 @@
 
     var ctx = mycanvas.getContext('2d'); // gets the context of the canvas 2d or  3d
 
-    // Erasing part of canvas
+    // Drawing shapes on canvas
 
-    // Lets create a rectangle that will occupy the whole canvas
-    ctx.fillRect(0, 0, mycanvas.width, mycanvas.height);
+    ctx.beginPath(); // 1. Declare that you want to draw a shape
+    ctx.moveTo(150, 50) // 2. Move to the place where the shape should start x, y cordinates
+    ctx.lineTo(200, 100) // 3. Draw a line vector from the start cordinates above, to the new cordinates (200, 100)
+    ctx.lineTo(100, 100) // 4. Draw a line vector from the cordinates above, to the new cordinates (100, 100)
+    ctx.lineTo(150, 50)  // 5. Draw a line vector from the cordinates above, to the new cordinates (150, 50)
 
-    // clearRect - erases some part of canvas, the erased part is a rectangle
-    // 5 - the x cordinate at which to place the top-left corner of the erased part
-    // 0 - the y cordinate at which to place the top-left corner of the erased part
-    // 25 - width of the erased part
-    // 130 - height of the erased part
-    ctx.clearRect(5,0,25,130);
+    // Should always have stroke or fill to appear on canvas
+    ctx.stroke(); // 6. Новата форма да има само контура
 
+    ctx.fill(); //  7. Новата форма да е запълнена // изтрии този ред за да видиш само контура
   </script>
 </body>
 </html>
