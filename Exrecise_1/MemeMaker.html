@@ -56,13 +56,8 @@
         ctx.clearRect(0, 0, canvas.width, canvas.height);
       }
 
-      // if there is no image chosen display a white background rectangle
-      if (image === undefined) {
-        ctx.fillStyle = "#ffffff"
-        ctx.fillRect(0,0, canvas.width, canvas.height);
-      } else {
-
-        // If there is an image, draw the image on the canvas
+      // If there is an image, draw the image on the canvas
+      if (image != null) {
         ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
       }
 
@@ -75,11 +70,11 @@
       // Draw the fill text on the top of canvas
       ctx.fillText(topLine, canvas.width / 2, 40);
 
-      // Draw the fill text on the bottom of canvas
-      ctx.fillText(bottomLine, canvas.width / 2, canvas.height - 50);
+      // Draw the fill text on the bottom of canvas - centers the bottom text and place it 40px befor ecanvas bottom
+      ctx.fillText(bottomLine, canvas.width / 2, canvas.height - 40);
 
       // Draw the stroke text at the same places as top fill and bottom fill texts
-      ctx.strokeText(bottomLine, canvas.width / 2, canvas.height - 50);
+      ctx.strokeText(bottomLine, canvas.width / 2, canvas.height - 40);
       ctx.strokeText(topLine, canvas.width / 2, 40);
     }
 
