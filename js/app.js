@@ -14,6 +14,12 @@ var ctx = mycanvas.getContext('2d'); // gets the context of the canvas 2d or  3d
     // Update the x position
     x += 2;
 
+    // When the green rectangle goes out of canvas reset its x postion to 0
+    // This creates loop effect
+    if (x == 300) {
+      x = 0;
+    }
+
     // Redraws the background
     ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
     ctx.fillRect(0, 0, mycanvas.width, mycanvas.height);
