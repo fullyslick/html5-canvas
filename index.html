@@ -9,23 +9,7 @@
 
 <body>
   <canvas id="mycanvas" width="300" height="300" style="border: solid 1px;"></canvas>
-  <script>
-    var mycanvas = document.querySelector('#mycanvas'); // gets the canvas HTML element
-
-    var ctx = mycanvas.getContext('2d'); // gets the context of the canvas 2d or  3d
-
-    //*********************** Drawing Text ******************************//
-    // If you want to set properties of text you should decalre them before text
-    ctx.fillStyle = "#202020"; // Fill color of fileld text
-    ctx.font = "bold 24px Impact"; // Same as css - font: bold 12px/14px Arial, Verdana, sans-serif;
-    ctx.textAlign = "center";
-
-    // Display Filled text - string text that will be displayed, x position, y position ( messaured from bottom left corner of text)
-    // mycanvas.width / 2 incombination with ctx.textAlign = "center";, centers the text
-    ctx.fillText('Disco Filled', mycanvas.width / 2, 85);
-
-  </script>
-
+  <script src="js/app.js"></script>
 </body>
 
 </html>
