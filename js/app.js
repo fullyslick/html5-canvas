@@ -9,6 +9,9 @@ var ctx = mycanvas.getContext('2d'); // gets the context of the canvas 2d or  3d
   // Gets update in the interval
   let x = 0;
 
+  // Decalre the background image object
+  const chessGridImage = new Image();
+
   setInterval(function() {
 
     // Update the x position
@@ -21,11 +24,13 @@ var ctx = mycanvas.getContext('2d'); // gets the context of the canvas 2d or  3d
     }
 
     // Redraws the background
-    ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
-    ctx.fillRect(0, 0, mycanvas.width, mycanvas.height);
+    ctx.drawImage(chessGridImage, 0, 0, mycanvas.width, mycanvas.height);
 
     // Redraws the rectangle with a new position
     ctx.fillStyle = "#ccff00";
     ctx.fillRect(x, 120, 30, 30);
   }, 30);
+
+  // Set the source file of the  background image object
+  chessGridImage.src = 'chessgrid.gif';
 }());
